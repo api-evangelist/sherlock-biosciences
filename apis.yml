@@ -1,17 +1,34 @@
 aid: sherlock-biosciences
 name: Sherlock Biosciences
-description: 'Sherlock Biosciences is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Sherlock Biosciences is a molecular diagnostics company founded in 2019 out of the Broad Institute to
+  commercialize SHERLOCK (Specific High-sensitivity Enzymatic Reporter unLOCKing), the CRISPR-based
+  nucleic-acid detection method developed in the Zhang lab, alongside INSPECTR, an ambient-temperature
+  synthetic-biology amplification platform. In May 2020 it received the first FDA Emergency Use
+  Authorization ever granted to a CRISPR-based diagnostic, for SARS-CoV-2. The company developed
+  disposable, instrument-free molecular self-tests, led by a combined Chlamydia trachomatis and Neisseria
+  gonorrhoeae assay. OraSure Technologies acquired Sherlock Biosciences in December 2024 and absorbed it
+  into its rapid-diagnostics portfolio; the sherlock.bio domain now permanently redirects to orasure.com.
+  Sherlock Biosciences is a laboratory diagnostics developer and has never operated a public developer
+  program, HTTP API, or machine-readable API contract.
 url: https://raw.githubusercontent.com/api-evangelist/sherlock-biosciences/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-27'
 modified: '2026-08-27'
 tags:
-- Company
+- Diagnostics
+- Molecular Diagnostics
+- CRISPR
+- Biotechnology
+- Life Sciences
+- Healthcare
+- Infectious Disease
+- Point of Care Testing
+- Synthetic Biology
+- Bioinformatics
+- Acquired
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,43 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/sherlock-biosciences-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://sherlock.bio/
+- type: ParentCompany
+  url: https://orasure.com/
+- type: GitHubOrganization
+  url: https://github.com/SherlockBiosciences
+- type: Packages
+  url: packages/sherlock-biosciences-packages.yml
+- type: LLMsTxt
+  url: llms/sherlock-biosciences-llms.txt
+x-enrichment:
+  date: '2026-08-27'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Sherlock Biosciences was acquired by OraSure Technologies in December 2024 and fully
+    absorbed; its own domain sherlock.bio now returns a bare 301 to orasure.com, and every
+    contract-discovery and .well-known path probed on sherlock.bio, orasure.com and
+    www.orasure.com returned 404, leaving a molecular-diagnostics company that never ran a
+    developer program with no surviving API surface of any kind.
+  evidence:
+  - url: https://sherlock.bio/
+    status: 301
+  - url: https://sherlock.bio/openapi.json
+    status: 404
+  - url: https://sherlock.bio/.well-known/agent-card.json
+    status: 404
+  - url: https://orasure.com/openapi.json
+    status: 404
+  - url: https://www.orasure.com/.well-known/api-catalog
+    status: 404
+  - url: https://github.com/SherlockBiosciences
+    status: 200
+  checked: '2026-08-27'

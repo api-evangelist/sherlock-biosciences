@@ -1,0 +1,87 @@
+generated: '2026-08-27'
+method: probed
+source: >-
+  Live GET probes of /.well-known/* on every host associated with Sherlock Biosciences
+  (sherlock.bio, its post-acquisition redirect target orasure.com, and www.orasure.com).
+  Every path returned 404 with a genuine 404 status code — no SPA catch-all shell was
+  observed on any host, so these are true absences rather than false negatives.
+note: >-
+  No .well-known document is served on any Sherlock Biosciences host. No WellKnown or
+  SecurityTxt pointer is wired in apis.yml, because this file records an absence and a
+  pointer would assert that the provider serves the surface.
+hosts:
+- host: sherlock.bio
+  note: >-
+    The company's own domain. The root 301-redirects to https://orasure.com/ following the
+    December 2024 OraSure Technologies acquisition; /.well-known/* paths return a bare 404.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: orasure.com
+  note: >-
+    Acquirer host, probed because sherlock.bio redirects here and it is where any surviving
+    Sherlock Biosciences surface would now live.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.orasure.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

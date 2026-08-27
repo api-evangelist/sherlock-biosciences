@@ -1,0 +1,71 @@
+generated: '2026-08-27'
+method: searched
+source: >-
+  Registry searches against npm (registry.npmjs.org), PyPI, RubyGems, crates.io, NuGet,
+  Maven Central and pkg.go.dev for Sherlock Biosciences / sherlock.bio packages, plus
+  enumeration of the company's GitHub organization at https://github.com/SherlockBiosciences.
+note: >-
+  Sherlock Biosciences publishes no client SDK on any public package registry, because it
+  operates no HTTP API for an SDK to wrap. The single first-party software artifact found is
+  DTRAPipe, an internal bioinformatics pipeline whose Sphinx-generated reference the company
+  published to GitHub Pages. It is a Python library, not an API client, so no `SDKs` pointer
+  is wired in apis.yml — only `Packages`.
+registries_searched:
+- registry: npm
+  result: no first-party package
+- registry: pypi
+  result: no first-party package
+- registry: rubygems
+  result: no first-party package
+- registry: crates.io
+  result: no first-party package
+- registry: nuget
+  result: no first-party package
+- registry: maven-central
+  result: no first-party package
+- registry: pkg.go.dev
+  result: no first-party package
+packages:
+- name: DTRAPipe
+  language: python
+  official: true
+  sdk: false
+  kind: internal-bioinformatics-pipeline
+  registry: none
+  version: 1.7.2
+  published: '2021-09-28'
+  version_source: >-
+    Read from the published Sphinx documentation title ("DTRAPipe 1.7.2 documentation") at
+    https://sherlockbiosciences.github.io/dtrapipedocs.github.io/ ; `published` is the last
+    commit date on the docs repository, which is the only dated signal available because the
+    package itself is not distributed on any public registry.
+  repository: https://github.com/SherlockBiosciences/dtrapipedocs.github.io
+  documentation: https://sherlockbiosciences.github.io/dtrapipedocs.github.io/
+  inventory: https://sherlockbiosciences.github.io/dtrapipedocs.github.io/objects.inv
+  install: null
+  install_note: >-
+    Not installable from any public source. The distribution itself was never published —
+    only the generated API reference was. `version: 1.7.2` is therefore the documented
+    version, not a fetchable one.
+  modules:
+  - DTRAPipeline.core
+  - DTRAPipeline.databases
+  - DTRAPipeline.utils
+  - DTRAPipeline.cmd
+  submodule_examples:
+  - DTRAPipeline.utils.SILVA16S
+  - DTRAPipeline.utils.blastutils
+  - DTRAPipeline.utils.entrezutils
+  - DTRAPipeline.utils.features
+  ownership_evidence: >-
+    The GitHub organization login is an exact match for the company name and was created
+    2020-11-18, inside the company's independent operating window. Every commit is authored
+    by Alex Larsen (GitHub @Zinthrow), who worked as a Bioinformatician I at Sherlock
+    Biosciences and was a co-author on the company's real-time multiplexed SHERLOCK
+    SARS-CoV-2 diagnostics paper. One commit is titled "docs EUA", matching the FDA
+    Emergency Use Authorization the company held for its CRISPR SARS-CoV-2 assay. The
+    package wraps NCBI Entrez, BLAST and SILVA 16S rRNA tooling, which is consistent with
+    the company's molecular-diagnostics assay-design work and not with any other Sherlock.
+  currency_note: >-
+    ABANDONMENT SIGNAL. Last touched 2021-09-28, roughly three years before the December
+    2024 OraSure acquisition and unmaintained since. The docs site still returns HTTP 200.

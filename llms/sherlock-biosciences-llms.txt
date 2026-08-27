@@ -1,0 +1,45 @@
+# Sherlock Biosciences
+
+> Molecular diagnostics company founded in 2019 out of the Broad Institute to commercialize
+> SHERLOCK (Specific High-sensitivity Enzymatic Reporter unLOCKing), the CRISPR-based
+> nucleic-acid detection method from the Zhang lab, alongside INSPECTR, an ambient-temperature
+> synthetic-biology amplification platform. Acquired by OraSure Technologies in December 2024.
+
+## API status
+
+**Sherlock Biosciences publishes no API.** This is an honest, probed absence, not a gap in
+research. There is no HTTP API, no developer portal, no OpenAPI, GraphQL, gRPC, AsyncAPI or
+WSDL contract, no MCP server, no A2A agent card, and no client SDK on any public package
+registry. The company builds laboratory and at-home diagnostic assays and instruments; software
+is not a product it sells.
+
+Probed 2026-08-27 across sherlock.bio, orasure.com and www.orasure.com:
+`/openapi.json`, `/openapi.yaml`, `/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/docs`,
+`/redoc`, `/graphql`, `/llms.txt`, `/.well-known/agent-card.json`, `/.well-known/agent.json`,
+`/.well-known/security.txt`, `/.well-known/openid-configuration`,
+`/.well-known/oauth-authorization-server`, `/.well-known/api-catalog`,
+`/.well-known/ai-plugin.json` — every path returned HTTP 404.
+
+## Corporate status
+
+- [Acquisition announcement](https://orasure.gcs-web.com/news-releases/news-release-details/orasure-technologies-acquires-sherlock-biosciences): OraSure Technologies acquired Sherlock Biosciences, announced December 2024.
+- [sherlock.bio](https://sherlock.bio/): the company's own domain. HTTP 301, permanently redirecting to orasure.com. The domain still carries live SPF and DMARC records.
+- [OraSure Technologies](https://orasure.com/): parent company. Any surviving Sherlock surface now lives here.
+
+## Technology and products
+
+- SHERLOCK — CRISPR-based nucleic-acid detection. Received the first FDA Emergency Use Authorization ever granted to a CRISPR-based diagnostic, for SARS-CoV-2, in May 2020.
+- INSPECTR — ambient-temperature synthetic-biology amplification, targeting instrument-free disposable molecular self-tests.
+- Lead assay — a combined Chlamydia trachomatis / Neisseria gonorrhoeae molecular self-test, folded into OraSure's rapid sexually-transmitted-infection portfolio.
+
+## Software the company did publish
+
+- [SherlockBiosciences on GitHub](https://github.com/SherlockBiosciences): the company's GitHub organization. One public repository.
+- [DTRAPipe documentation](https://sherlockbiosciences.github.io/dtrapipedocs.github.io/): Sphinx-generated reference for DTRAPipe 1.7.2, an internal Python bioinformatics pipeline (`DTRAPipeline.core`, `.databases`, `.utils`, `.cmd`) wrapping NCBI Entrez, BLAST and SILVA 16S rRNA tooling. Named for the Defense Threat Reduction Agency. This is a Python library reference, **not** an HTTP API. The package itself was never distributed on PyPI or any other registry, so it cannot be installed; only the generated documentation was published. Last updated 2021-09-28 and unmaintained since.
+- [Machine-readable object inventory](https://sherlockbiosciences.github.io/dtrapipedocs.github.io/objects.inv): the Sphinx inventory for the above — the only machine-readable interface description the company ever published.
+
+## Notes for agents
+
+There is nothing here to call. Do not construct a Sherlock Biosciences API base URL, endpoint,
+or authentication scheme — none exists, and any such value would be fabricated. For current
+products, address OraSure Technologies at orasure.com.
